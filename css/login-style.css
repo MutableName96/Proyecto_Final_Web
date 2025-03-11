@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --main-bg-color:#ffff;
+    --black-color:#0D0D0D ;
+    --champagne-color:#F7E7CE ;
+    --blue-color-:#004851 ;
+    --red-color:#B7121F ;
+    --dark-vine-color:#4C0D14 ;
+    --low-vine-color:#800020 ;
+    --middle-vine-color:#6D071A ;
+
+
+}
+
+*{
+}
+
+body{
+    background-color: white;
+    overflow: hidden;
+    font-family: 'Playfair+Display', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card{
+    width: 950px;
+    height: 778px;
+    display: flex;
+    background-color: var(--main-bg-color);
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow:  20px 20px 60px #bebebe,-20px -20px 60px #ffffff;
+}
+
+.left-size{
+
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-image:url(../assets/images/Dark-hat.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30%;
+    border-right: var(--blue-color-) 2px solid;
+    
+}
+.left-size h1{
+    
+    font-size: 110px;
+    text-align: center;
+    min-height: 100hv;
+    text-transform: uppercase;
+    font-weight: bold;
+    mix-blend-mode: hard-light;
+    color: white;
+    text-shadow:0 5px 10px rgb(0, 0, 0,1);
+
+}
+
+.left-size span{
+    color: var(--blue-color-);
+
+}
+
+.right-size{
+    background-color: var(--main-bg-color);
+    width: 50%;
+    height: 100%;
+}
+
+.right-size-header{
+    display: flex; 
+    justify-content: space-between;
+}
+
+.right-size-header h1{
+    font-size: 80px;
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #0D0D0D;
+}
+
+
+.right-size-header img{
+    width: 32px;
+    height: 32px;
+}
+
+.right-size-header a{
+    width: 32px;
+    margin: 5%;
+    padding: 0;
+    height: 32px;
+}
+
+.bow h2{
+    margin-top: -5%;
+    color: #6D071A;
+    padding: 15px;
+    margin-left: 2%;
+
+}
+
+.form-login  form h2{
+    
+    color: #0D0D0D;
+
+}
+
+.form-login form{
+    margin-top: 50px;
+    padding-left: 10px;
+    
+}
+.form-login form h2{
+    margin: 0%;
+    
+}
+.form-login form input{
+
+    width: 405px;
+    height: 60px;
+    font-size: 25px;
+    border: var(--blue-color-) 5px solid;
+    border-radius: 10px;
+    margin: 15px;
+    
+}
+
+.regis-log{
+    display: flex;
+    
+}
+
+.regis-log a{
+    text-decoration: none;
+    padding: 20px;
+    color: var(--blue-color-);
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.regis-log a:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s;
+    color: rgb(0, 72, 81,0.9);
+}
+
+.logs-in{
+display: flex;
+margin-left: 30%;    
+}
+
+.logs-in a{
+    padding: 0;
+}
+
+.logs-in a img{
+    width: 50px;
+    height: 50px;
+}
+
+.form-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.form-button button{
+    width: 240px;
+    height: 90px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    background-color: var(--blue-color-);
+    border-radius: 5px;
+    color: white;
+    border: none    ;
+    
+}
+
+.form-button button:hover{
+    background-color: #4C0D14;
+    transition: 0.4s;
+}
+
+.footer-log{
+    margin-top: 35px;
+    width: 100%;
+    text-align: right;
+}
+.footer-log img{
+    width: 50px;
+    margin: 0;
+    height: auto;
+}
+
+
+
