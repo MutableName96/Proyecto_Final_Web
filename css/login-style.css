@@ -44,7 +44,7 @@ body{
     align-items: center;
     width: 50%;
     height: 100%;
-    background-image:url(../assets/images/Dark-hat.png);
+    background-image:url(../public/img/R.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 30%;
@@ -53,7 +53,7 @@ body{
 }
 .left-size h1{
     
-    font-size: 110px;
+    font-size: 80px;
     text-align: center;
     min-height: 100hv;
     text-transform: uppercase;
@@ -106,33 +106,70 @@ body{
     color: #6D071A;
     padding: 15px;
     margin-left: 2%;
-
+    margin-bottom: 20%;
 }
 
-.form-login  form h2{
-    
-    color: #0D0D0D;
 
+.form-login {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-.form-login form{
-    margin-top: 50px;
-    padding-left: 10px;
-    
+.form-login form {
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.form-login form h2{
-    margin: 0%;
-    
-}
-.form-login form input{
 
-    width: 405px;
-    height: 60px;
-    font-size: 25px;
-    border: var(--blue-color-) 5px solid;
-    border-radius: 10px;
-    margin: 15px;
-    
+.form-login input {
+    width: 80%;
+    padding: 25px 22px 22px 60px;
+    border: 2px solid var(--blue-color-);
+    border-radius: 8px;
+    font-size: 1.2em;
+    outline: none;
+    background: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.label-wrap {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+}
+.icon-label {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.labelname {
+    font-size: 1.1em;
+    color: var(--blue-color-);
+    transition: transform 0.3s ease, color 0.3s ease;
+    pointer-events: none;
+}
+
+.form-login input:focus {
+    border-color: var(--red-color);
+    box-shadow: 0px 0px 8px rgba(109, 7, 26,0.3);
+}
+.form-login input:focus + .label-wrap .labelname,
+.form-login input:not(:placeholder-shown) + .label-wrap .labelname {
+    top: 0;
+    transform: translateY(-150%) translateX(-50px) scale(0.8); 
+    color: var(--red-color);
+    background-color: var(--main-bg-color);
+    padding: 2px 8px;
 }
 
 .regis-log{
