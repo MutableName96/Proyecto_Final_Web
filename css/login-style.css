@@ -14,12 +14,12 @@
 }
 
 *{
+    font-family: 'Playfair+Display', sans-serif;
 }
 
 body{
     background-color: white;
     overflow: hidden;
-    font-family: 'Playfair+Display', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,8 +40,6 @@ body{
 
 .left-size{
 
-    display: flex;
-    align-items: center;
     width: 50%;
     height: 100%;
     background-image:url(../assets/images/Dark-hat.png);
@@ -52,7 +50,7 @@ body{
     
 }
 .left-size h1{
-    
+    text-align: center; 
     font-size: 80px;
     text-align: center;
     min-height: 100hv;
@@ -67,6 +65,13 @@ body{
 .left-size span{
     color: var(--blue-color-);
 
+}
+
+.left-size img{
+    text-align: left;
+    width: 60px;
+    margin: 20px;
+    height: auto;
 }
 
 .right-size{
@@ -106,6 +111,7 @@ body{
     color: #6D071A;
     padding: 15px;
     margin-left: 2%;
+    font-size: 110%;
     margin-bottom: 20%;
 }
 
@@ -218,7 +224,7 @@ margin-left: 30%;
     width: 240px;
     height: 90px;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     background-color: var(--blue-color-);
     border-radius: 5px;
@@ -231,17 +237,5 @@ margin-left: 30%;
     background-color: #4C0D14;
     transition: 0.4s;
 }
-
-.footer-log{
-    margin-top: 35px;
-    width: 100%;
-    text-align: right;
-}
-.footer-log img{
-    width: 50px;
-    margin: 0;
-    height: auto;
-}
-
 
 
