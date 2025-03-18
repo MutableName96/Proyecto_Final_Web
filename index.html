@@ -1,80 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HATGAP - FOR THE FEW, NOT THE MANY</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <a href="index.html" class="nav__logo">LOGO</a>
-            <ul class="nav__list">
-                <li class="nav__items"><a class="nav__links" href="index.html">Colecciones</a></li>
-                <li class="nav__items"><a class="nav__links" href="about.html">Hombres</a></li>
-                <li class="nav__items"><a class="nav__links" href="contact.html">Mujeres</a></li>
-                <li class="nav__items"><a class="nav__links" href="contact.html">Unisex</a></li>
-                <li class="nav__items"><a class="nav__links" href="contact.html">Accesorios</a></li>
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">LOGO</a>
+        <ul class="nav__list">
+          <li class="nav__items nav__has-submenu">
+            <a class="nav__links" href="index.html">Colecciones</a>
+            <ul class="submenu">
+              <li><a href="sombreros.html">Sombreros Clásicos</a></li>
+              <li><a href="sombreros.html">Sombreros de Alta Costura</a></li>
+              <li><a href="sombreros.html">Sombreros Unisex</a></li>
             </ul>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="about.html">Hombres</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="contact.html">Mujeres</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="contact.html">Unisex</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="contact.html">Accesorios</a>
+          </li>
+        </ul>
 
-            <ul class="nav__list">
-                <li class="nav__items"><a class="nav__links" href="about.html">ES | MXN($)</a></li>
-                <li class="nav__items"><a class="nav__links" href="contact.html"><i data-lucide="search"></i></a></li>
-                <li class="nav__items"><a class="nav__links" href="pages/login.html"><i data-lucide="user"></i></a></li>
-                <li class="nav__items"><a class="nav__links" href="contact.html"><i data-lucide="shopping-cart"></i></a></li>
-            </ul>
-            
-        </nav>
+        <ul class="nav__list">
+          <li class="nav__items">
+            <a class="nav__links" href="about.html">ES | MXN($)</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="contact.html">
+              <i data-lucide="search"></i>
+            </a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="pages/login.html">
+              <i data-lucide="user"></i>
+            </a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="contact.html">
+              <i data-lucide="shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-        <div class="categoria">
-            <h1 class="categoria__h1">Encuentra tu sombrero ideal.</h1>
-            <div class="categoria__list">
-                <div class="categoria__item">
-                    <img src="assets/images/blanco.webp" alt="" class="categoria__img">
-                        <h2 class="categoria__h2">Sombrero de paja</h2>
-                </div>
-                <div class="categoria__item">
-                    <img src="assets/images/blanco.webp" alt="" class="categoria__img">
-                        <h2 class="categoria__h2">Sombrero de paja</h2>
-                </div>
-                <div class="categoria__item">
-                    <img src="assets/images/blanco.webp" alt="" class="categoria__img">
-                        <h2 class="categoria__h2">Sombrero de paja</h2>
-                </div>
-                <div class="categoria__item">
-                    <img src="assets/images/blanco.webp" alt="" class="categoria__img">
-                        <h2 class="categoria__h2">Sombrero de paja</h2>
-                </div>
-                <div class="categoria__item">
-                    <img src="assets/images/blanco.webp" alt="" class="categoria__img">
-                        <h2 class="categoria__h2">Sombrero de paja</h2>
-                </div>
-                <div class="categoria__item">
-                    <img class="item_img" src="assets/images/blanco.webp" alt="" class="categoria__img">
-                    <h2 class="categoria__h2">Sombrero de paja</h2>
-                </div>
-                
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <div class="carousel-text">
+            <h2>ICONS ONLY</h2>
+            <p>
+              Handmade in the U.S.A. since 1865, our legendary hats continue to
+              set the standard for craftsmanship and authentic western heritage.
+            </p>
+            <button>SHOP NOW</button>
+          </div>
+          <div
+            class="carousel-image"
+            style="background-image: url('assets/images/western.png')"
+          ></div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-text">
+            <h2>PREMIUM QUALITY</h2>
+            <p>
+              Experience the finest materials and craftsmanship in every hat we
+              make.
+            </p>
+            <button>SHOP NOW</button>
+          </div>
+          <div
+            class="carousel-image"
+            style="background-image: url('assets/images/carrusel\ 1.webp')"
+          ></div>
+        </div>
+      </div>
+      <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+      <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+      <div class="indicators">
+        <span class="indicator" onclick="showSlide(0)"></span>
+        <span class="indicator" onclick="showSlide(1)"></span>
+      </div>
+    </div>
+
+    <div class="categories">
+      <h2>Encuentra tu sombrero ideal</h2>
+      <div class="cards">
+        <a href="cowboy.html" class="card">
+          <img src="assets/images/blanco.webp" alt="Sombrero Cowboy" />
+          <h3>Sombrero Cowboy</h3>
+        </a>
+        <a href="assets/images/cafe.webp" class="card">
+          <img src="assets/images/cafe.webp" alt="Sombrero Fedora" />
+          <h3>Sombrero Fedora</h3>
+        </a>
+        <a href="assets/images/negro.webp" class="card">
+          <img src="assets/images/negro.webp" alt="Sombrero Panamá" />
+          <h3>Sombrero Panamá</h3>
+        </a>
+        <a href="assets/images/negro.webp" class="card">
+          <img src="assets/images/negro.webp" alt="Sombrero Panamá" />
+          <h3>Sombrero Panamá</h3>
+        </a>
+      </div>
+    </div>
+
+    <section class="gallery">
+        <h2>Galería de Sombreros</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item large">
+                <img src="assets/images/modelo 1.webp" alt="Sombrero Elegante 1">
+            </div>
+            <div class="gallery-item medium">
+                <img src="assets/images/modelo 2.webp" alt="Sombrero Elegante 2">
+            </div>
+            <div class="gallery-item medium">
+                <img src="assets/images/modelo 3.webp" alt="Sombrero Elegante 3">
+            </div>
+            <div class="gallery-item medim">
+                <img src="assets/images/modelo 4.webp" alt="Sombrero Elegante 4">
+            </div>
+            <div class="gallery-item large">
+                <img src="assets/images/modelo 6.webp" alt="Sombrero Elegante 5">
+            </div>
+            <div class="gallery-item medium">
+                <img src="assets/images/modelo 5.webp" alt="Sombrero Elegante 5">
             </div>
         </div>
-    </main>
+    </section>
+    
 
-    <footer>
-        <p>Todos los derechos reservados</p>
-    </footer>
+    <section class="about-us">
+      <div class="about-content">
+        <div class="text">
+          <h1>Sobre HATGAP</h1>
+          <p>
+            En HATGAP nos dedicamos a ofrecer sombreros de la más alta calidad,
+            combinando diseño exclusivo y materiales premium. Cada uno de
+            nuestros productos es creado con la pasión por el detalle y un
+            compromiso hacia la elegancia atemporal. Con nuestros sombreros,
+            buscamos resaltar la personalidad de quienes los usan, reflejando
+            sofisticación y estilo único.
+          </p>
+        </div>
+        <div class="image">
+          <img
+            src="assets/images/about us.webp"
+            alt="Sombreros Elegantes en Tienda"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>SUPPORT</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>INFO</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>&copy; 2024 HatGap - All Rights Reserved</p>
+    </div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          lucide.createIcons();
-        });
-      </script>
-      
-</body>
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+      });
+    </script>
+
+    <script src="js/index.js"></script>
+  </body>
 </html>
