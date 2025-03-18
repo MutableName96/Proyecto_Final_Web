@@ -14,7 +14,7 @@
 }
 
 * {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'PlayfairDisplay', serif;
 }
 
 .nav {
@@ -119,7 +119,7 @@
 
 .card-product{
     display: flex;
-    height: 170px;
+    height: 190px;
     justify-content: space-between;
     padding: 10px;
     border-bottom: rgba(13, 13, 13, 0.2) 1px solid;
@@ -186,8 +186,7 @@
 
 .encabezados {
     display: grid;
-    grid-template-columns: 1.5fr 4fr 4fr 3fr; /* Ajusta las proporciones de las columnas */
-    font-weight: bold;
+     grid-template-columns: 1.5fr 4fr 4fr 3fr; /*pa las columnas */
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
