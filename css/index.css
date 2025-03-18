@@ -407,3 +407,26 @@
     flex: 1;
   }
 }
+
+.nav__logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__logo p{
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-left: 8px;
+}
+
+.eslogan{
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+
+

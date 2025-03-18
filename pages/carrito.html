@@ -1,104 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style-carrito.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style-carrito.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+
     <title>Carrito</title>
-</head>
-<body>
-    <header>
-        <div class="nav">
-            <a href="/index.html"><img src="../assets/images/Logos-HatGap/logo-0D0D0D.png" alt="logo"><h1>HATGAP</h1></a>
-
-        </div>
-    </header>
+  </head>
+  <body>
+    <header class="header">
+        <nav class="nav">
+          <div class="nav__logo">
+              <a href="/index.html" class="nav__logo"><img src="/assets/images/Logos-HatGap/logo-0D0D0D.png" style="width: 30px; height: auto;" alt=""></a>
+              <p>HATGAP</p>
+          </div>
+          
+          <ul class="nav__list">
+            <li class="nav__items nav__has-submenu">
+              <a class="nav__links" href="index.html">Colecciones</a>
+              <ul class="submenu">
+                <li><a href="sombreros.html">Sombreros Clásicos</a></li>
+                <li><a href="sombreros.html">Sombreros de Alta Costura</a></li>
+                <li><a href="sombreros.html">Sombreros Unisex</a></li>
+              </ul>
+            </li>
+            <li class="nav__items">
+              <a class="nav__links" href="pages/productos.html">Hombres</a>
+            </li>
+            <li class="nav__items">
+              <a class="nav__links" href="contact.html">Mujeres</a>
+            </li>
+            <li class="nav__items">
+              <a class="nav__links" href="contact.html">Unisex</a>
+            </li>
+            <li class="nav__items">
+              <a class="nav__links" href="contact.html">Accesorios</a>
+            </li>
+          </ul>
+  
+              <ul class="nav__list">
+                  <li class="nav__items"><a class="nav__links" href="about.html">ES | MXN($)</a></li>
+                  <li class="nav__items"><a class="nav__links" href="contact.html"><i data-lucide="search"></i></a></li>
+                  <li class="nav__items"><a class="nav__links" href="/pages/login.html"><i data-lucide="user"></i></a></li>
+                  <li class="nav__items"><a class="nav__links" href="/pages/carrito.html"><i data-lucide="shopping-cart"></i></a></li>
+              </ul>
+              
+          </nav>
+      </header>
     <div class="contenedor-main">
-        <div class="products-list">
-
-            <div class="encabezados">
-                <span>Producto</span>
-                <span>Descripción</span>
-                <span>Precio Unitario</span>
-                <span>Total</span>
-            </div>
-            
-            <div class="card-product">
-                <img src="../assets/images/productos/Atacama Straw Fedora.png" alt="">
-                <p>With its wide brim and tall crown, the Atacama is a hat that goes big. It’s crafted from rich shantung straw with a firm finish, and features a large tied hat band with an oversized feather. At the interior, there’s a Dri-Lex Sweatband to help you keep cool.</p>
-                <span class="price">$ 1499</span>
-                <div class="wrapper">
-                    <span class="minus">-</span>
-                    <span class="num">01</span>
-                    <span class="plus">+</span>
-                </div>
-                <span class="price">$ 1499</span>
-                <form action="">
-                    <button class="delate-product"><img src="../assets/icons/carrito/trash-2.png" alt=""></button>
-                </form>
-            </div>
-
-            <div class="card-product">
-                <img src="../assets/images/productos/Belgrade Straw Outdoor Hat.png" alt="">
-                <p>Handwoven one strand at a time from high-quality shantung straw, the Belgrade brings timeless style to any warm-weather adventure. It has a classic profile, featuring a 4” pinch front crown and 3” underwelt brim, along with a two-tone leather hatband and Stetson logo pin. A retractable leather chincord with wooden toggle and a cotton sweatband provide a secure and comfortable fit.</p>
-                <span class="price">$ 500</span>
-                <div class="wrapper">
-                    <span class="minus">-</span>
-                    <span class="num">01</span>
-                    <span class="plus">+</span>
-                </div>
-                <span class="price">$ 500</span>
-                <form action="">
-                    <button class="delate-product"><img src="../assets/icons/carrito/trash-2.png" alt=""></button>
-                </form>
-            </div>
-
-            <div class="card-product">
-                <img src="../assets/images/productos/Glen Rose Outdoor Straw Hat.png" alt="">
-                <p>With its wide brim and tall crown, the Atacama is a hat that goes big. It’s crafted from rich shantung straw with a firm finish, and features a large tied hat band with an oversized feather. At the interior, there’s a Dri-Lex Sweatband to help you keep cool.</p>
-                <span class="price">$ 500</span>
-                <div class="wrapper">
-                    <span class="minus">-</span>
-                    <span class="num">01</span>
-                    <span class="plus">+</span>
-                </div>
-                <span class="price">$ 500</span>
-                <form action="">
-                    <button class="delate-product"><img src="../assets/icons/carrito/trash-2.png" alt=""></button>
-                </form>
-            </div>
-
-
-            
-
+      <div class="products-list">
+        <div class="encabezados">
+          <span>Producto</span>
+          <span>Descripción</span>
+          <span>Precio Unitario</span>
+          <span>Total</span>
         </div>
-        <div class="detalle-compra">
-            <p style="font-weight: bold;">Fecha de Entrega</p>
-            <p>10 Marzo - 18 Abril</p>
-            <p style="font-weight: bold;">Direccion de envio</p>
-            <p>Colonia campanula. Num 12213. Morelia, Mich, Mexico </p>
-            <p style="font-weight: bold;">Resumen del pedido</p>
-            <div class="resumen-pedido">
-                <p>Subtotal</p> <span>$ 13232132</span>
-            </div>
-            <div class="resumen-pedido">
-                <p>Descuento</p> <span class="descuento">-$ 16500</span>
-            </div>
-            <div class="resumen-pedido">
-                <p>Total a pagar</p> <span>$ 5</span>
-            </div>
-            <div class="resumen-pedido">
-                <p>Total de envio</p> <span class="descuento">Gratis</span>
-            </div>
-            <form action="">
-                <button class="btn-compra">Finalizar compra</button>
-            </form>
+
+        <div class="card-product">
+          <img
+            src="../assets/images/productos/Atacama Straw Fedora.png"
+            alt=""
+          />
+          <p>
+            With its wide brim and tall crown, the Atacama is a hat that goes
+            big. It’s crafted from rich shantung straw with a firm finish, and
+            features a large tied hat band with an oversized feather. At the
+            interior, there’s a Dri-Lex Sweatband to help you keep cool.
+          </p>
+          <span class="price">$ 1499</span>
+          <div class="wrapper">
+            <span class="minus">-</span>
+            <span class="num">01</span>
+            <span class="plus">+</span>
+          </div>
+          <span class="price">$ 1499</span>
+          <form action="">
+            <button class="delate-product">
+              <img src="../assets/icons/carrito/trash-2.png" alt="" />
+            </button>
+          </form>
         </div>
+
+        <div class="card-product">
+          <img
+            src="../assets/images/productos/Belgrade Straw Outdoor Hat.png"
+            alt=""
+          />
+          <p>
+            Handwoven one strand at a time from high-quality shantung straw, the
+            Belgrade brings timeless style to any warm-weather adventure. It has
+            a classic profile, featuring a 4” pinch front crown and 3” underwelt
+            brim, along with a two-tone leather hatband and Stetson logo pin. A
+            retractable leather chincord with wooden toggle and a cotton
+            sweatband provide a secure and comfortable fit.
+          </p>
+          <span class="price">$ 500</span>
+          <div class="wrapper">
+            <span class="minus">-</span>
+            <span class="num">01</span>
+            <span class="plus">+</span>
+          </div>
+          <span class="price">$ 500</span>
+          <form action="">
+            <button class="delate-product">
+              <img src="../assets/icons/carrito/trash-2.png" alt="" />
+            </button>
+          </form>
+        </div>
+
+        <div class="card-product">
+          <img
+            src="../assets/images/productos/Glen Rose Outdoor Straw Hat.png"
+            alt=""
+          />
+          <p>
+            With its wide brim and tall crown, the Atacama is a hat that goes
+            big. It’s crafted from rich shantung straw with a firm finish, and
+            features a large tied hat band with an oversized feather. At the
+            interior, there’s a Dri-Lex Sweatband to help you keep cool.
+          </p>
+          <span class="price">$ 500</span>
+          <div class="wrapper">
+            <span class="minus">-</span>
+            <span class="num">01</span>
+            <span class="plus">+</span>
+          </div>
+          <span class="price">$ 500</span>
+          <form action="">
+            <button class="delate-product">
+              <img src="../assets/icons/carrito/trash-2.png" alt="" />
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="detalle-compra">
+        <p style="font-weight: bold">Fecha de Entrega</p>
+        <p>10 Marzo - 18 Abril</p>
+        <p style="font-weight: bold">Direccion de envio</p>
+        <p>Colonia campanula. Num 12213. Morelia, Mich, Mexico</p>
+        <p style="font-weight: bold">Resumen del pedido</p>
+        <div class="resumen-pedido">
+          <p>Subtotal</p>
+          <span>$ 13232132</span>
+        </div>
+        <div class="resumen-pedido">
+          <p>Descuento</p>
+          <span class="descuento">-$ 16500</span>
+        </div>
+        <div class="resumen-pedido">
+          <p>Total a pagar</p>
+          <span>$ 5</span>
+        </div>
+        <div class="resumen-pedido">
+          <p>Total de envio</p>
+          <span class="descuento">Gratis</span>
+        </div>
+        <form action="">
+          <button class="btn-compra">Finalizar compra</button>
+        </form>
+      </div>
     </div>
-    
-    <script src="/js/inc-dec-number.js"></script>
+    <div class="footer">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>SUPPORT</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>INFO</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>&copy; 2024 HatGap - All Rights Reserved</p>
+    </div>
+    <script src="assets/js/index.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+      });
+    </script>
 
-</body>
+    <script src="/js/inc-dec-number.js"></script>
+  </body>
 </html>
