@@ -1,198 +1,274 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    --main-bg-color: #ffff;
-    --black-color: #0D0D0D;
-    --champagne-color: #F7E7CE;
-    --blue-color-: #004851;
-    --red-color: #B7121F;
-    --dark-vine-color: #4C0D14;
-    --low-vine-color: #800020;
-    --middle-vine-color: #6D071A;
+    --main-bg-color:#ffff;
+    --black-color:#0D0D0D ;
+    --champagne-color:#F7E7CE ;
+    --blue-color-:#004851 ;
+    --red-color:#B7121F ;
+    --dark-vine-color:#4C0D14 ;
+    --low-vine-color:#800020 ;
+    --middle-vine-color:#6D071A ;
 
 
 }
 
-* {
+*{
     font-family: 'PlayfairDisplay', serif;
 }
 
-/*.nav {
-    width: 100%;
-    background-color: var(--main-bg-color);
-    height: 80px;
-    box-shadow: 5px 5px 10px 2px rgba(13, 13, 13, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-
-
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header | Contenido | Footer */
+    min-height: 100vh;
 }
-
-.nav a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-
-}
-
-.nav a img {
-
-    width: 30px;
-    padding: 10px;
-    height: auto;
-}
-
-.nav a h1 {
-    font-weight: bolder;
-    letter-spacing: 5px;
-    font-size: 30px;
-
-}*/
 
 .contenedor-main {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    height: auto;
-    align-items: center;
+    max-width: 1500px;
+    margin-left:500px;
     gap: 20px;
-
+    align-items: flex-start;
 }
 
 .products-list {
-    margin: 0;
-    width: 60%;
-    height: 800px;
-    margin: 20px;
-    box-shadow: 1px 1px 2px 2px rgba(13,13, 13, 0.2);
-
-
+    width: 100%;
+    
+    background-color: var(--main-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(13, 13, 13, 0.1);
+    padding: 20px;
 }
 
 .detalle-compra {
-    margin: 20px;
-    padding: 20px;
-    width: 500px;
-    height: 800px;
-    box-shadow: 1px 1px 2px 2px rgba(13, 13, 13, 0.2);
-
-
+    width: 35%;
+    background-color: var(--main-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(13, 13, 13, 0.1);
+    padding: 25px;
+    position: sticky;
+    top: 20px;
 }
 
-.resumen-pedido {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-right: 20%;
-}
-
-.resumen-pedido span {
-    white-space: nowrap;
-    
-}
-
-.descuento{
-    color: var(--red-color);
-}
-
-
-.detalle-compra form {
-    text-align: center;
-    margin-top: 50%;
-}
-
-.btn-compra{
-    width: 400px;
-    height: 70px;
-    font-size: 25px;
-    color: var(--main-bg-color);
-    border: none;
-    background-color:var(--red-color) ;
-
-}
-.btn-compra:hover{
-    background-color: rgba(138, 18, 31, 2);
-}
-
-.card-product{
-    display: flex;
-    height: 190px;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: rgba(13, 13, 13, 0.2) 1px solid;
-
-}
-
-.card-product img{
-    width: 150px;
-    height: auto;
-    object-fit: contain;
-
-
-}
-
-.card-product p{
-    width: 30%;
-    height: 100%;
-    text-align: justify;
-    font-size: 15px;
-}
-
-.wrapper {
-    padding: 5PX;    
-    height: 30px;
-    width: 100px;
-    max-width: 200px;
-    border-radius: 2px;
-    background-color: #004851;
-    display: flex;
-    color: var(--main-bg-color);
-    align-items: center;
-    justify-content: center;
-    box-shadow:2px 2px 4px rgba(13, 13, 13, 0.5);
-}
-
-
-.wrapper span {
-    font-size: 22px;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    user-select: none;
-}
-
-.wrapper span.num {
-    font-size: 22px;
-    pointer-events: none;
-} 
-
-.price{
-    font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.delate-product{
-    background:none;
-    border: none;
-    cursor: pointer;
-}
-
-.delate-product img{
-    width: 40px;
-    height: auto;
-}
-
+/* Encabezados de la lista de productos */
 .encabezados {
     display: grid;
-     grid-template-columns: 1.5fr 4fr 4fr 3fr; /*pa las columnas */
-    text-align: center;
-    padding: 10px;
+    grid-template-columns: 100px 2fr 1fr 1fr 1fr auto;
+    gap: 15px;
+    text-align: left;
+    
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.1);
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.encabezados span {
+#des{
+    text-align: center;
+}
+
+#unit{
+    text-align: left;
+}
+
+/* Tarjeta de producto */
+.card-product {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 1fr auto; 
+    gap: 2px;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.1);
+}
+
+.card-product img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.card-product p {
+    margin: 0;
+    font-size: 15px;
+    padding: 20px;
+    line-height: 1.4;
+    color: var(--black-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    text-align: justify;
+    margin-right: 20px;
+    line-clamp: unset;
+    -webkit-box-orient: vertical;
+}
+
+.wrapper {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 40px;
+    background-color: var(--blue-color-);
+    color: var(--main-bg-color);
+    border-radius: 4px;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(13, 13, 13, 0.2);
+}
+
+.wrapper span {
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 5px;
+}
+
+.wrapper span.num {
+    pointer-events: none;
+    font-weight: bold;
+}
+
+/* Precios */
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.delate-product button {
+    background: none;
+    border: none;
+    cursor: pointer;
     padding: 5px;
+}
+
+.delate-product img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.delate-product:hover img {
+    transform: scale(1.1);
+}
+.delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.delete-btn:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Resumen del pedido */
+.resumen-pedido {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(13, 13, 13, 0.2);
+}
+
+.resumen-pedido:last-child {
+    border-bottom: none;
+}
+
+.descuento {
+    color: var(--red-color);
+    font-weight: bold;
+}
+
+/* Botón de compra */
+.btn-compra {
+    width: 100%;
+    height: 60px;
+    background-color: var(--red-color);
+    color: var(--main-bg-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Playfair Display', serif;
+}
+
+.btn-compra:hover {
+    background-color: #8a0d1a;
+}
+
+/* Carrito vacío */
+.empty-cart {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--black-color);
+    font-size: 18px;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .encabezados {
+        display: none;
+    }
+    
+    .card-product {
+        grid-template-columns: 80px 1fr auto; /* Añadimos una columna extra para el botón */
+        grid-template-areas: 
+            "image description delete"
+            "price price price"
+            "quantity quantity quantity"
+            "total total total";
+        gap: 15px;
+        padding: 25px 0;
+        align-items: start; /* Alinear elementos al inicio */
+    }
+    
+    .card-product p {
+        grid-area: description;
+        width: 100%;
+        padding: 0 10px; /* Reducir padding */
+        margin-right: 0; /* Eliminar margen derecho */
+        text-align: left; /* Alinear texto a la izquierda */
+    }
+    
+    .card-product .price:nth-of-type(1) {
+        grid-area: price;
+        text-align: right;
+        padding-right: 20px; /* Añadir espacio a la derecha */
+    }
+    
+    .wrapper {
+        grid-area: quantity;
+        justify-self: start; /* Alinear a la izquierda */
+        width: 180px; /* Reducir ancho si es necesario */
+    }
+    
+    .card-product .price:nth-of-type(2) {
+        grid-area: total;
+        text-align: right;
+        padding-right: 20px; /* Añadir espacio a la derecha */
+    }
+    
+    .delate-product {
+        grid-area: delete;
+        justify-self: end;
+        align-self: start; /* Alinear arriba */
+        padding-top: 0; /* Eliminar padding superior */
+    }
 }

@@ -53,87 +53,12 @@
       <div class="products-list">
         <div class="encabezados">
           <span>Producto</span>
-          <span>Descripción</span>
-          <span>Precio Unitario</span>
+          <span id="des">Descripción</span>
+          <span id="unit">Precio Unitario</span>
+          <span id="unit">Cantidad</span>
           <span>Total</span>
         </div>
 
-        <div class="card-product">
-          <img
-            src="../assets/images/productos/Atacama Straw Fedora.png"
-            alt=""
-          />
-          <p>
-            With its wide brim and tall crown, the Atacama is a hat that goes
-            big. It’s crafted from rich shantung straw with a firm finish, and
-            features a large tied hat band with an oversized feather. At the
-            interior, there’s a Dri-Lex Sweatband to help you keep cool.
-          </p>
-          <span class="price">$ 1499</span>
-          <div class="wrapper">
-            <span class="minus">-</span>
-            <span class="num">01</span>
-            <span class="plus">+</span>
-          </div>
-          <span class="price">$ 1499</span>
-          <form action="">
-            <button class="delate-product">
-              <img src="../assets/icons/carrito/trash-2.png" alt="" />
-            </button>
-          </form>
-        </div>
-
-        <div class="card-product">
-          <img
-            src="../assets/images/productos/Belgrade Straw Outdoor Hat.png"
-            alt=""
-          />
-          <p>
-            Handwoven one strand at a time from high-quality shantung straw, the
-            Belgrade brings timeless style to any warm-weather adventure. It has
-            a classic profile, featuring a 4” pinch front crown and 3” underwelt
-            brim, along with a two-tone leather hatband and Stetson logo pin. A
-            retractable leather chincord with wooden toggle and a cotton
-            sweatband provide a secure and comfortable fit.
-          </p>
-          <span class="price">$ 500</span>
-          <div class="wrapper">
-            <span class="minus">-</span>
-            <span class="num">01</span>
-            <span class="plus">+</span>
-          </div>
-          <span class="price">$ 500</span>
-          <form action="">
-            <button class="delate-product">
-              <img src="../assets/icons/carrito/trash-2.png" alt="" />
-            </button>
-          </form>
-        </div>
-
-        <div class="card-product">
-          <img
-            src="../assets/images/productos/Glen Rose Outdoor Straw Hat.png"
-            alt=""
-          />
-          <p>
-            With its wide brim and tall crown, the Atacama is a hat that goes
-            big. It’s crafted from rich shantung straw with a firm finish, and
-            features a large tied hat band with an oversized feather. At the
-            interior, there’s a Dri-Lex Sweatband to help you keep cool.
-          </p>
-          <span class="price">$ 500</span>
-          <div class="wrapper">
-            <span class="minus">-</span>
-            <span class="num">01</span>
-            <span class="plus">+</span>
-          </div>
-          <span class="price">$ 500</span>
-          <form action="">
-            <button class="delate-product">
-              <img src="../assets/icons/carrito/trash-2.png" alt="" />
-            </button>
-          </form>
-        </div>
       </div>
       <div class="detalle-compra">
         <p style="font-weight: bold">Fecha de Entrega</p>
@@ -191,8 +116,9 @@
       </div>
       <p>&copy; 2024 HatGap - All Rights Reserved</p>
     </div>
-    <script src="assets/js/index.js"></script>
+    <script src="/js/index.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/js/carrito.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         lucide.createIcons();
