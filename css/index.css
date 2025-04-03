@@ -9,8 +9,10 @@
     --dark-vine-color:#4C0D14 ;
     --low-vine-color:#800020 ;
     --middle-vine-color:#6D071A ;
+}
 
-
+body{
+  overflow-x: hidden;
 }
 
 *{
@@ -377,14 +379,14 @@
 
 .text h1 {
   font-size: 5.5em;
-  color:var(--main-bg-color);
+  color:var(--black-color);
   margin-bottom: 15px;
 }
 
 .about-us {
   width: 100%;
   height: auto;
-  background-color: var(--blue-color-);
+
   margin: 0 auto;
   padding: 40px 20px;
   display: flex;
@@ -393,6 +395,8 @@
   flex-wrap: wrap;
   
 }
+
+
 
 .about-content {
   display: flex;
@@ -412,7 +416,7 @@
   font-size: 2.2rem;
   line-height: 1.15;
   padding-right: 50px;
-  color: var(--main-bg-color);
+  color: var(--black-color);
   text-align: justify;
 }
 
