@@ -208,3 +208,64 @@ button:active {
 .filter-options li a:hover {
   background-color: #f0f0f0;
 }
+/* Estilos para filtros */
+.filter {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: inline-block;
+  user-select: none;
+}
+
+.filter span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter i {
+  width: 16px;
+  height: 16px;
+}
+
+.filter-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-width: 160px;
+  padding: 8px 0;
+  margin-top: 5px;
+}
+
+.filter-options li {
+  padding: 8px 16px;
+  transition: background-color 0.2s;
+}
+
+.filter-options li:hover {
+  background-color: #f0f0f0;
+}
+
+.filter-options a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+/* Indicador de filtro activo */
+.filter.active {
+  background-color: #0D0D0D;
+  color: white;
+}
+
+.filter.active i {
+  color: white;
+}
