@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/login-style.css" />
     <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css" />
 
+
     <title>Vite App</title>
 </head>
 
@@ -30,24 +31,31 @@
             </div>
 
             <div class="form-login">
-                <form action="">
-                    <input type="text" placeholder="" name="full-name" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/mail.png" alt="label-icon" class="icon-label" />
-                        <div class="labelname">Email</div>
+                <form action="login.php" method="POST">
+                    <div class="input-container">
+                        <input type="email" placeholder=" " name="email" required />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/mail.png" alt="label-icon" class="icon-label" />
+                            <div class="labelname">Correo electrónico</div>
+                        </div>
                     </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="" name="password" required />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/lock-keyhole.png" alt="label-icon" class="icon-label" />
+                            <div class="labelname">Contraseña</div> 
+                        </div>
+                    </div>
+            
+                    <div class="form-button">
+                        <button type="submit">Iniciar sesión</button> 
+                    </div>
+            
                 </form>
             </div>
+            
 
-            <div class="form-login">
-                <form action="">
-                    <input type="password" placeholder="" name="full-name" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/lock-keyhole.png" alt="label-icon" class="icon-label" />
-                        <div class="labelname">Password</div>
-                    </div>
-                </form>
-            </div>
+           
 
             <div class="regis-log">
                 <a href="../pages/register.html">Registrarse</a>
@@ -57,9 +65,7 @@
                 </div>
             </div>
 
-            <div class="form-button">
-                <button type="submit">Iniciar sesión</button>
-            </div>
+            
         </div>
     </div>
 </body>
