@@ -21,6 +21,8 @@ body{
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header | Contenido | Footer */
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .contenedor-main {
@@ -44,6 +46,7 @@ body{
 }
 
 .detalle-compra {
+    margin-right: 200px;
     width: 35%;
     background-color: var(--main-bg-color);
     border-radius: 8px;
