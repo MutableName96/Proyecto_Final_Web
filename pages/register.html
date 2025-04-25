@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/register-style.css" />
-    <title>Document</title>
+
+    <title>registro</title>
 </head>
 
 <body>
     <div class="register-card">
-        <div class="left-size"> 
+        <div class="left-size">
             <a href="../index.html"><img src="../assets/images/Logos-HatGap/logo-FFFFFF.png" alt="" id="logo-1" /></a>
         </div>
         <div class="right-size">
@@ -18,67 +19,68 @@
                 <h1>Bienvenido a <span>HatGap</span></h1>
                 <a href="../index.html"><img src="../assets/images/circle-x.svg" alt="" /></a>
             </div>
-            
 
             <div class="form-login">
-                <form action="">
-                    <input type="text" placeholder="" name="full-name"/>
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/user.png" alt="label-icon" class="icon-label">
-                        <div class="labelname">Nombre</div>
+                <form action="register.php" method="POST">
+
+                    <div class="input-container">
+                        <input type="text" placeholder=" " name="full-name" required />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/user.png" alt="label-icon" class="icon-label">
+                            <div class="labelname">Nombre</div>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="form-login">
-                <form action="">
-                    <input type="text" placeholder="" name="email" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/mail.png" alt="label-icon" class="icon-label">
-                        <div class="labelname">Correo Electronico</div>
+                
+                    <div class="input-container">
+                        <input type="text" placeholder=" " name="email" required />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/mail.png" alt="label-icon" class="icon-label">
+                            <div class="labelname">Correo Electrónico</div>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="form-login">
-                <form action="">
-                    <input type="password" placeholder="" name="password" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/lock-keyhole.png" alt="label-icon" class="icon-label">
-                        <div class="labelname">Contraseña</div>
+                
+                    <div class="input-container">
+                        <input type="password" placeholder=" " name="password" required />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/lock-keyhole.png" alt="label-icon" class="icon-label">
+                            <div class="labelname">Contraseña</div>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="form-login">
-                <form action="">
-                    <input type="text" id="phone" name="phone-number" maxlength="10" required placeholder=" " />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/phone.png" alt="label-icon" class="icon-label">
-                        <div class="labelname">Telefono</div>
+                
+                    <div class="input-container">
+                        <input type="text" id="phone" name="phone-number" maxlength="10" required placeholder=" " />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/phone.png" alt="label-icon" class="icon-label">
+                            <div class="labelname">Teléfono</div>
+                        </div>
                         <div id="char-count">0/10</div>
                     </div>
-                </form>
-            </div>
-            <div class="form-login">
-                <form action="">
-                    <input type="text" placeholder="" name="address" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/map-pin-house.png" alt="label-icon" class="icon-label">
-                        <div class="labelname">Direccion</div>
+                
+                    <div class="input-container">
+                        <input type="text" placeholder=" " name="address" required />
+                        <div class="label-wrap">
+                            <img src="../assets/icons/register-login-icons/map-pin-house.png" alt="label-icon" class="icon-label">
+                            <div class="labelname">Dirección</div>
+                        </div>
                     </div>
+                
+                    <div class="form-button">
+                        <button type="submit">Registrarse</button>
+                    </div>
+                
                 </form>
+                
             </div>
-            <div class="logIn">
-                <p>¿Ya tienes una cuenta? <a href="../pages/login.html">Inicia sesión</a></p>
-            </div>
-            
-            <div class="form-button">
-                <button type="submit">Registrarse</button>
-            </div>
+
+        <div class="logIn">
+        <p>¿Ya tienes una cuenta? <a href="../pages/login.html">Inicia sesión</a></p>
         </div>
+    
     </div>
 
     <script src="/js/length-number.js"></script>
 
-    
+
 
 </body>
 

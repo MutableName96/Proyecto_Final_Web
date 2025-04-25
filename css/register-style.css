@@ -1,313 +1,303 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    --main-bg-color:#ffff;
-    --black-color:#0D0D0D ;
-    --champagne-color:#F7E7CE ;
-    --blue-color-:#004851 ;
-    --red-color:#B7121F ;
-    --dark-vine-color:#4C0D14 ;
-    --low-vine-color:#800020 ;
-    --middle-vine-color:#6D071A ;
-
-
+    --main-bg-color: #ffff;
+    --black-color: #0D0D0D;
+    --champagne-color: #F7E7CE;
+    --blue-color: #004851;
+    --red-color: #B7121F;
+    --dark-vine-color: #4C0D14;
+    --low-vine-color: #800020;
+    --middle-vine-color: #6D071A;
 }
 
-*{
+* {
     font-family: 'PlayfairDisplay', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-color: white;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
-.register-card{
-    min-width: 950px;
-    height: 778px;
+/* TARJETA DE REGISTRO */
+.register-card {
+    width: 950px;
+    min-height: 778px;
     display: flex;
     background-color: var(--main-bg-color);
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow:  20px 20px 60px #bebebe,-20px -20px 60px #ffffff;
+    margin: 2rem auto;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    position: relative;
 }
 
-.left-size{
+/* LADO IZQUIERDO */
+.left-size {
     width: 50%;
-    height: 100%;
-    background-image:url(../assets/images/register-img-2.png);
+    background-image: url(../assets/images/register-img-22.png);
     background-size: cover;
-    
-    
+    background-position: center;
     background-repeat: no-repeat;
-    border-right: var(--blue-color-) 2px solid;
-    
+    border-right: 2px solid var(--blue-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
 }
-.left-size img{
+
+.left-size img {
     width: 60px;
-    margin: 20px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+/* LADO DERECHO */
+.right-size {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-size-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.right-size-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--black-color);
+    text-align: center;
+    width: 50%;
+}
+
+.right-size-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.right-size-header a:hover {
+    transform: rotate(90deg);
+}
+
+.right-size-header img {
+    width: 100%;
     height: auto;
 }
 
-
-.left-size span{
-    color: var(--blue-color-);
-
-}
-
-.right-size{
-    background-color: var(--main-bg-color);
-    width: 50%;
-    height: 100%;
-}
-
-.right-size-header{
-    display: flex; 
-    justify-content: space-between;
-}
-
-.right-size-header h1{
-    font-size: 50px;
-    margin: 10px;
-    width: 90%;
-    text-align: center;
-    font-weight: bold;
-    color: #0D0D0D;
-}
-
-
-.right-size-header img{
-    width: 32px;
-    height: 32px;
-}
-
-.right-size-header a{
-    width: 32px;
-    margin: 5%;
-    padding: 0;
-    height: 32px;
-}
-
+/* FORMULARIO */
 .form-login {
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    flex-grow: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .form-login form {
-    position: relative;
-    width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .form-login input {
-    width: 70%;
-    padding: 15px 12px 12px 60px;
-    border: 2px solid var(--blue-color-);
+    width: 100%;
+    padding: 20px 20px 20px 60px;
+    border: 2px solid var(--blue-color);
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 16px;
     outline: none;
     background: transparent;
-    position: relative;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .label-wrap {
     position: absolute;
-    left: 12px;
+    left: 40px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     pointer-events: none;
+    transition: all 0.3s ease;
 }
+
 .icon-label {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 }
-.labelname {
-    font-size: 1.1em;
-    color: var(--blue-color-);
-    transition: transform 0.3s ease, color 0.3s ease;
-    pointer-events: none;
+
+.form-login input:focus + .label-wrap,
+.form-login input:not(:placeholder-shown) + .label-wrap {
+    top: 0;
+    transform: translateY(-50%) translateX(-20px);
+    background-color: var(--main-bg-color);
+    padding: 0 10px;
 }
 
-.form-login input:focus {
-    border-color: var(--red-color);
-    box-shadow: 0px 0px 8px rgba(109, 7, 26,0.3);
-}
 .form-login input:focus + .label-wrap .labelname,
 .form-login input:not(:placeholder-shown) + .label-wrap .labelname {
-    top: 0;
-    transform: translateY(-100%) translateX(-50px) scale(0.8); 
     color: var(--red-color);
-    background-color: var(--main-bg-color);
-    padding: 2px 8px;
+    font-size: 0.9em;
 }
 
-
-
-
-#char-count{
-    text-align: right;
-    min-width: 150%;
-    font-size: 12px; 
+/* Contador de caracteres para teléfono */
+#char-count {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
     color: #888;
+    background-color: var(--main-bg-color);
+    padding: 0 0.25rem;
 }
 
-
-.logIn{
-    width: 100%;
-    margin-left: 100px;
-    margin:20px;
+/* SECCIÓN "¿YA TIENES CUENTA?" */
+.logIn {
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
-.logIn p{
-    padding-left:20px ;
+.logIn p {
     color: var(--black-color);
-    font-size: 20px;
+    font-size: 1.125rem;
 }
-.logIn a{
-    text-decoration: none;
+
+.logIn a {
     color: var(--red-color);
     font-weight: bold;
-    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .logIn a:hover {
-    color: var(--blue-color-);
+    color: var(--blue-color);
     text-decoration: underline;
 }
 
-
-
-.form-button{
+/* BOTÓN DE REGISTRO */
+.form-button {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: -10px;
+    margin-top: 1rem;
 }
 
-.form-button button{
+.form-button button {
     width: 240px;
     height: 90px;
-    text-align: center;
-    font-size: 40px;
+    font-size: 1.75rem;
     font-weight: bold;
-    background-color: var(--blue-color-);
-    border-radius: 5px;
+    background-color: var(--blue-color);
+    border-radius: 8px;
     color: white;
-    border: none    ;
-    
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.form-button button:hover{
-    background-color: #4C0D14;
-    transition: 0.4s;
+.form-button button:hover {
+    background-color: var(--dark-vine-color);
+    transform: translateY(-2px);
 }
 
-
-
-
-
+/* RESPONSIVE */
+@media screen and (max-width: 992px) {
+    .register-card {
+        width: 90%;
+        min-height: auto;
+    }
+}
 
 @media screen and (max-width: 768px) {
-
     .register-card {
-        flex-direction: column; 
+        flex-direction: column;
         min-width: 100%;
-        height: auto;  
-    }
-
-    #char-count{
-        text-align: right;
-        min-width: 200%;
+        height: auto;
+        margin: 0;
+        box-shadow: none;
     }
 
     .left-size {
-        width: 0px;
-        height: 10px;
-        background-image: none;
-        border-bottom: var(--blue-color-) 2px solid; 
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 2px solid var(--blue-color);
     }
 
     .right-size {
         width: 100%;
-        height: auto;
+        padding: 1.5rem;
     }
 
     .right-size-header h1 {
-        font-size: 32px;
-        width: auto;
-        text-align: center;
+        font-size: 2rem;
     }
 
     .form-login input {
-        width: 90%;
-        padding: 12px 10px 10px 40px; 
+        padding: 1rem 1rem 1rem 3rem;
     }
 
-    .icon-label {
-        width: 25px;
-        height: 25px;
+    .label-wrap {
+        left: 1rem;
     }
 
     .form-button button {
-        width: 80%;
-        height: 60px;
-        font-size: 24px;
+        width: 100%;
+        height: 70px;
+        font-size: 1.5rem;
     }
 
-.footer-log img {
-        width: 40px;
+    #char-count {
+        right: 0.5rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-
-    .register-card {
-        padding: 10px;
-    }
-    .left-size {
-        height: 0;
-        background-position: center;
-    }
-
-    #char-count{
-        text-align: right;
-        min-width: 140%;
+    .right-size-header h1 {
+        font-size: 1.75rem;
     }
 
     .form-login input {
-        font-size: 1em;
-        padding: 10px 8px 8px 30px; 
+        font-size: 0.9rem;
+        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    }
+
+    .label-wrap {
+        left: 0.875rem;
     }
 
     .form-button button {
-        width: 90%;
-        height: 50px;
-        font-size: 20px;
+        height: 60px;
+        font-size: 1.25rem;
     }
 
-    .right-size-header h1 {
-        font-size: 28px;
-    }
-
-    .footer-log img {
-        width: 35px;
+    .logIn p,
+    .logIn a {
+        font-size: 1rem;
     }
 }

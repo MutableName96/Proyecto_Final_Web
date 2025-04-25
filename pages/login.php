@@ -1,98 +1,56 @@
 <?php
-session_start();
-require_once 'C:/xampp/htdocs/hatgap/includes/db.php';
-require_once __DIR__ . '/../includes/auth.php';
+session_start(); // Iniciar sesión
 
-$error = '';
+// Incluir la conexión a la base de datos
+include '../includes/db.php'; 
 
-// Procesar el formulario cuando se envía
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
-    
+// Si el formulario fue enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtener los datos del formulario
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Validar si el correo electrónico y la contraseña no están vacíos
     if (empty($email) || empty($password)) {
-        $error = "Email y contraseña son obligatorios";
-    } else {
-        if (login($email, $password)) {
-            // Redirigir al dashboard después del login exitoso
-            header("Location: ../dashboard.php");
+        echo "Por favor, complete todos los campos.";
+        exit;
+    }
+
+    // Preparar la consulta para verificar si el usuario existe
+    $stmt = $pdo->prepare("SELECT id, email, password FROM usuarios WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(); // Obtenemos el resultado
+
+    // Si el usuario existe
+    if ($user) {
+        // Verificar si la contraseña ingresada coincide con el hash almacenado
+        if (password_verify($password, $user['password'])) {
+            // Si la contraseña es correcta, iniciar sesión
+            $_SESSION['usuario_id'] = $user['id'];
+            $_SESSION['usuario_email'] = $user['email'];
+
+            // Guardamos la URL de la página anterior (para redirigir después)
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                $_SESSION['previous_url'] = $_SERVER['HTTP_REFERER'];
+            } else {
+                $_SESSION['previous_url'] = 'index.php'; // Redirige a la página principal si no hay referer
+            }
+
+            // Redirigir al dashboard u otra página de inicio
+            header("Location: dashboard.php");
             exit();
         } else {
-            $error = "Credenciales incorrectas";
+            // Contraseña incorrecta
+            echo "La contraseña es incorrect.";
         }
+    } else {
+        // Usuario no encontrado
+        echo "El correo electrónico no está registrado.";
     }
+
+    // No es necesario llamar a close() en PDOStatement
+    $stmt = null; // Puedes dejar que PHP se encargue de liberar la memoria
 }
+
+$pdo = null; // Cerrar la conexión PDO
 ?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/login-style.css" />
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <title>Iniciar sesión | HatGap</title>
-</head>
-
-<body>
-    <div class="login-card">
-        <div class="left-size">
-            <div class="left-size-header">
-                <a href="../index.php"><img src="../assets/images/Logos-HatGap/logo-FFFFFF.png" alt="HatGap Logo" id="logo-1" /></a>
-            </div>
-            <h1>For the few<span>, </span>not for the many<span>.</span></h1>
-        </div>
-
-        <div class="right-size">
-            <div class="right-size-header">
-                <h1>HatGap</h1>
-                <a href="../index.php"><img src="../assets/images/circle-x.svg" alt="Cerrar" /></a>
-            </div>
-            <div class="bow">
-                <h2>Hola, bienvenido de nuevo <span>👋</span></h2>
-            </div>
-
-            <?php if ($error): ?>
-                <div class="error-message">
-                    <?php echo htmlspecialchars($error); ?>
-                </div>
-            <?php endif; ?>
-
-            <!-- Formulario principal ÚNICO -->
-            <div class="form-login">
-                <form action="">
-                    <input type="text" placeholder="" name="full-name" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/mail.png" alt="label-icon" class="icon-label" />
-                        <div class="labelname">Email</div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="form-login">
-                <form action="">
-                    <input type="password" placeholder="" name="full-name" />
-                    <div class="label-wrap">
-                        <img src="../assets/icons/register-login-icons/lock-keyhole.png" alt="label-icon" class="icon-label" />
-                        <div class="labelname">Password</div>
-                    </div>
-                </form>
-            </div>
-
-                <div class="regis-log">
-                    <a href="../pages/register.php">Registrarse</a>
-                    <div class="logs-in">
-                        <a href="#"><img src="../assets/images/icon-google.png" alt="Google" /></a>
-                        <a href="#"><img src="../assets/images/icon-facebook.png" alt="Facebook" /></a>
-                    </div>
-                </div>
-
-                <div class="form-button">
-                    <button type="submit">Iniciar sesión</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
-</html>

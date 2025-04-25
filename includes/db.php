@@ -7,8 +7,13 @@ $username = 'root'; // Usuario de MySQL
 $password = ''; // Contraseña de MySQL
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Configuración para manejo de errores
+    // Conexión a la base de datos con la configuración del charset UTF-8
+    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+    $pdo = new PDO($dsn, $username, $password);
+
+    // Configuración para manejo de errores
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
 } catch (PDOException $e) {
     die("Error de conexión: " . $e->getMessage());
 }

@@ -1,45 +1,56 @@
 <?php
+// includes/auth.php
+
+// Incluir la conexión PDO
+require_once __DIR__ . '/db.php';
+
+/**
+ * Registra un nuevo usuario.
+ * 
+ * @param string $fullName
+ * @param string $email
+ * @param string $password
+ * @param string $phone
+ * @param string $address
+ * @return bool True si se registró correctamente, false en caso contrario.
+ */
 function registerUser($fullName, $email, $password, $phone, $address) {
-    global $conn;
-    
-    // Sanitizar los datos para evitar inyecciones
+    global $pdo; // Usamos $pdo, no $conn
+
+    // Sanitizar datos
     $fullName = htmlspecialchars(trim($fullName));
-    $email = htmlspecialchars(trim($email));
-    $password = trim($password); // La contraseña no se necesita sanitizar
-    $phone = htmlspecialchars(trim($phone));
-    $address = htmlspecialchars(trim($address));
-    
-    // Validar el email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return false; // Email no válido
+    $email    = htmlspecialchars(trim($email));
+    $password = trim($password);
+    $phone    = htmlspecialchars(trim($phone));
+    $address  = htmlspecialchars(trim($address));
+
+    // Validar email
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Email inválido.";
+        return false;
     }
 
-    // Verificar si el email ya existe
-    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+    // Verificar si el email ya está registrado
+    $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
-    
     if ($stmt->fetch()) {
-        return false; // Email ya registrado
+        echo "El correo ya está registrado.";
+        return false; // Ya existe
     }
-    
-    // Insertar nuevo usuario
-    try {
-        // Hashear la contraseña con BCRYPT
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-        // Preparar la consulta de inserción
-        $stmt = $conn->prepare("INSERT INTO usuarios (nombre_completo, email, password, telefono, direccion) VALUES (?, ?, ?, ?, ?)");
-        
-        // Ejecutar la inserción
-        return $stmt->execute([$fullName, $email, $hashedPassword, $phone, $address]);
+    // Hashear la contraseña
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+    // Insertar nuevo usuario (usamos 'username' en lugar de 'nombre_completo')
+    try {
+        $stmt = $pdo->prepare(
+            "INSERT INTO usuarios (username, email, password, phone, address) 
+             VALUES (?, ?, ?, ?, ?)"
+        );
+        $stmt->execute([$fullName, $email, $hashedPassword, $phone, $address]);
+        return true;
     } catch (PDOException $e) {
-        // Loguear el error con más contexto
-        error_log("Error al registrar el usuario con email $email: " . $e->getMessage());
+        echo "Error al registrar usuario: " . $e->getMessage(); // Mostrar el error
         return false;
     }
 }
-$email = $_POST['email'] ?? '';
-$password = $_POST['password'] ?? '';
-error_log("Email recibido: " . $email); // Esto registrará el valor del email
-
-?>
