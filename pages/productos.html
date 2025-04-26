@@ -20,13 +20,13 @@
     <nav class="nav">
       <div class="nav__logo">
         <a href="/index.html" class="nav__logo"><img src="/assets/images/Logos-HatGap/logo-0D0D0D.png"
-            style="width: 30px; height: auto;" alt=""></a>
+            style="width: 30px; height: auto;" alt=""> </a>
         <p>HATGAP</p>
       </div>
 
       <ul class="nav__list">
         <li class="nav__items nav__has-submenu">
-          <a class="nav__links" href="index.html">Colecciones</a>
+          <a class="nav__links" href="../index.html">Colecciones</a>
           <ul class="submenu">
             <li><a href="sombreros.html">Sombreros Clásicos</a></li>
             <li><a href="sombreros.html">Sombreros de Alta Costura</a></li>
@@ -34,35 +34,51 @@
           </ul>
         </li>
         <li class="nav__items">
-          <a class="nav__links" href="pages/productos.html">Hombres</a>
+          <a class="nav__links" href="productos.html">Hombres</a>
         </li>
         <li class="nav__items">
-          <a class="nav__links" href="contact.html">Mujeres</a>
+          <a class="nav__links" href="productos.html">Mujeres</a>
         </li>
         <li class="nav__items">
-          <a class="nav__links" href="contact.html">Unisex</a>
+          <a class="nav__links" href="productos.html">Unisex</a>
         </li>
         <li class="nav__items">
-          <a class="nav__links" href="contact.html">Accesorios</a>
+          <a class="nav__links" href="productos.html">Accesorios</a>
         </li>
       </ul>
 
       <ul class="nav__list">
-        <li class="nav__items"><a class="nav__links" href="about.html">ES | MXN($)</a></li>
-        <li class="nav__items"><a class="nav__links" href="contact.html"><i data-lucide="search"></i></a></li>
-        <li class="nav__items"><a class="nav__links" href="../hatgap/pages/login.php"><i data-lucide="user"></i></a>
+        <li class="nav__items search-wrapper">
+          <input type="text" class="search-bar" placeholder="Buscar...">
+          <a class="nav__links search-toggle" href="#"><i data-lucide="search"></i></a>
         </li>
-        <li class="nav__items"><a class="nav__links" href="/pages/carrito.html"><i data-lucide="shopping-cart"></i></a>
-        </li>
+      
+        <li class="nav__items"><a class="nav__links" href="profile.html">ES | MXN($)</a></li>
+        <li class="nav__items"><a class="nav__links" href="pages/login.html"><i data-lucide="user"></i></a></li>
+        <li class="nav__items"><a class="nav__links" href="/pages/carrito.html"><i data-lucide="shopping-cart"></i></a></li>
       </ul>
+      
+      
 
     </nav>
   </header>
+
+
+
+
+
+
+
+
+
+
+  
   <section class="gallery-section">
     
 
     <div class="gallery">
-      <a href="/pages/producto-info.html" class="product-card">
+      <!-- Producto 1 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Redora" data-talla="M" data-color="black" data-precio="750.85">
         <img src="../assets/images/sombrero 8.png" alt="No black hat" />
         <p>Redora black hat</p>
         <p>$750.85</p>
@@ -71,8 +87,9 @@
           <span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 2 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Aedora" data-talla="L" data-color="black" data-precio="3750.85">
         <img src="../assets/images/sombrero 1.png" alt="Fedora black hat" />
         <p>Aedora black hat</p>
         <p>$3750.85</p>
@@ -80,8 +97,9 @@
           <span class="color black"></span><span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 3 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Sedora" data-talla="S" data-color="pink" data-precio="600.85">
         <img src="../assets/images/sombrero 2.png" alt="Aedora black hat" />
         <p>Sedora black hat</p>
         <p>$600.85</p>
@@ -89,17 +107,19 @@
           <span class="color black"></span><span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 4 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Vedora" data-talla="M" data-color="black" data-precio="450.85">
         <img src="../assets/images/sombrero 1.png" alt="Dedora black hat" />
-        <p>vedora black hat</p>
+        <p>Vedora black hat</p>
         <p>$450.85</p>
         <div class="color-options">
           <span class="color black"></span><span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 5 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Aedora" data-talla="L" data-color="pink" data-precio="750.85">
         <img src="../assets/images/sombrero 4.png" alt="Tedora black hat" />
         <p>Aedora black hat</p>
         <p>$750.85</p>
@@ -107,8 +127,9 @@
           <span class="color black"></span><span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 6 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Fedora" data-talla="M" data-color="black" data-precio="800.85">
         <img src="../assets/images/sombrero 5.png" alt="Fedora black hat" />
         <p>Fedora black hat</p>
         <p>$800.85</p>
@@ -116,8 +137,9 @@
           <span class="color black"></span><span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 7 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Pedora" data-talla="S" data-color="pink" data-precio="750.85">
         <img src="../assets/images/sombrero 6.png" alt="Pedora black hat" />
         <p>Pedora black hat</p>
         <p>$750.85</p>
@@ -125,8 +147,9 @@
           <span class="color black"></span><span class="color pink"></span>
         </div>
       </a>
-
-      <a href="/pages/producto-info.html" class="product-card">
+    
+      <!-- Producto 8 -->
+      <a href="/pages/producto-info.html" class="product-card" data-marca="Xedora" data-talla="L" data-color="black" data-precio="1231.85">
         <img src="../assets/images/sombrero 7.png" alt="Xedora black hat" />
         <p>Xedora black hat</p>
         <p>$1231.85</p>
@@ -135,6 +158,7 @@
         </div>
       </a>
     </div>
+    
 
     <div class="pagination">
       <button>1</button>
@@ -182,6 +206,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/products.js"></script>
   <script src="/js/navegacionMenu.js"></script>
+  <script src="../js/barraBusqueda.js"></script>
 
   <!-- Inicialización -->
   <script>
@@ -197,6 +222,8 @@
       }
     });
   </script>
+    
+
 </body>
 
 </html>

@@ -118,6 +118,29 @@ body {
   background-color: #f5f5f5;
 }
 
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar {
+  width: 0;
+  padding: 8px 10px;
+  opacity: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 14px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.search-bar.active {
+  width: 200px;
+  opacity: 1;
+}
+
 
 /*Carrusel*/
 
@@ -222,7 +245,7 @@ body {
 
 .categories {
   text-align: center;
-  padding: 50px 20px;
+  padding: 30px 20px;
   font-size: 1.5em;
   font-family: "Playfair Display", serif;
 }
@@ -771,3 +794,52 @@ body {
     justify-content: center;
   }
 }
+
+
+.text-Hatgap{
+  margin-left: 50px;
+  font-size: 50px;
+  padding: 10px;
+  font-weight: bold;
+
+}
+
+.typeProducts{
+  width: 100%;
+  height: 25vh;
+  margin-top: 20px;
+  border-bottom: 5  px solid var(--black-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.cardProducts{
+  
+  width: auto;
+  max-width: 150px;
+  padding: 10px;
+  height: auto;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color:var(--black-color);
+  text-align: center;
+  
+}
+
+.cardProducts img{
+  width: 150px;
+  margin-bottom: 10px;
+  height: 150px;
+}
+.cardProducts h2,img{
+
+  margin: 0;
+  padding: 0;
+}
+
