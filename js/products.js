@@ -78,36 +78,65 @@ function initProducts() {
   // BÚSQUEDA
   function initSearch() {
     const searchIcon = document.querySelector('[data-lucide="search"]');
-    if (!searchIcon) {
-      console.warn("No se encontró el icono de búsqueda");
+    const searchWrapper = document.querySelector('.search-wrapper');
+    const searchBar = document.querySelector('.search-bar');
+  
+    if (!searchIcon || !searchWrapper || !searchBar) {
+      console.warn("Elementos de búsqueda no encontrados");
       return;
     }
-    
+  
     searchIcon.addEventListener('click', function(e) {
       e.preventDefault();
-      const searchTerm = prompt('Ingrese su búsqueda:');
-      if (searchTerm) {
-        const products = document.querySelectorAll('.product-card');
-        let hasResults = false;
+      searchWrapper.classList.toggle('active');
+      if (searchWrapper.classList.contains('active')) {
+        searchBar.focus();
+      } else {
+        searchBar.blur();
+      }
+    });
+  
+    // Buscar productos cuando presionas Enter en el input
+    searchBar.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault(); // Evita que el formulario (si existe) se envíe
+        const searchTerm = searchBar.value.trim().toLowerCase();
         
-        products.forEach(product => {
-          const productName = product.querySelector('p:first-of-type').textContent.toLowerCase();
-          if (productName.includes(searchTerm.toLowerCase())) {
-            product.style.display = 'block';
-            hasResults = true;
-          } else {
-            product.style.display = 'none';
+        if (searchTerm) {
+          const products = document.querySelectorAll('.product-card');
+          let hasResults = false;
+          
+          products.forEach(product => {
+            const productName = product.querySelector('p:first-of-type').textContent.toLowerCase();
+            if (productName.includes(searchTerm)) {
+              product.style.display = 'block';
+              hasResults = true;
+            } else {
+              product.style.display = 'none';
+            }
+          });
+          
+          updatePagination();
+          
+          if (!hasResults) {
+            alert(`No se encontraron resultados para "${searchTerm}"`);
           }
-        });
-        
-        updatePagination();
-        
-        if (!hasResults) {
-          alert(`No se encontraron resultados para "${searchTerm}"`);
+        } else {
+          // Si el campo está vacío, mostrar todo
+          document.querySelectorAll('.product-card').forEach(p => p.style.display = 'block');
+          updatePagination();
         }
       }
     });
+  
+    // Opcional: cerrar la barra si haces click fuera
+    document.addEventListener('click', function(e) {
+      if (!searchWrapper.contains(e.target) && e.target !== searchIcon) {
+        searchWrapper.classList.remove('active');
+      }
+    });
   }
+  
   
   // PAGINACIÓN
   let currentPage = 1;

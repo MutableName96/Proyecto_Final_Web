@@ -11,44 +11,51 @@
   </head>
   <body>
     <header class="header">
-        <nav class="nav">
-          <div class="nav__logo">
-              <a href="/index.html" class="nav__logo"><img src="/assets/images/Logos-HatGap/logo-0D0D0D.png" style="width: 30px; height: auto;" alt=""></a>
-              <p>HATGAP</p>
-          </div>
-          
-          <ul class="nav__list">
-            <li class="nav__items nav__has-submenu">
-              <a class="nav__links" href="index.html">Colecciones</a>
-              <ul class="submenu">
-                <li><a href="sombreros.html">Sombreros Clásicos</a></li>
-                <li><a href="sombreros.html">Sombreros de Alta Costura</a></li>
-                <li><a href="sombreros.html">Sombreros Unisex</a></li>
-              </ul>
-            </li>
-            <li class="nav__items">
-              <a class="nav__links" href="pages/productos.html">Hombres</a>
-            </li>
-            <li class="nav__items">
-              <a class="nav__links" href="contact.html">Mujeres</a>
-            </li>
-            <li class="nav__items">
-              <a class="nav__links" href="contact.html">Unisex</a>
-            </li>
-            <li class="nav__items">
-              <a class="nav__links" href="contact.html">Accesorios</a>
-            </li>
-          </ul>
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="/index.html" class="nav__logo"><img src="/assets/images/Logos-HatGap/logo-0D0D0D.png"
+              style="width: 30px; height: auto;" alt=""> </a>
+          <p>HATGAP</p>
+        </div>
   
-              <ul class="nav__list">
-                  <li class="nav__items"><a class="nav__links" href="about.html">ES | MXN($)</a></li>
-                  <li class="nav__items"><a class="nav__links" href="contact.html"><i data-lucide="search"></i></a></li>
-                  <li class="nav__items"><a class="nav__links" href="/pages/login.html"><i data-lucide="user"></i></a></li>
-                  <li class="nav__items"><a class="nav__links" href="/pages/carrito.html"><i data-lucide="shopping-cart"></i></a></li>
-              </ul>
-              
-          </nav>
-      </header>
+        <ul class="nav__list">
+          <li class="nav__items nav__has-submenu">
+            <a class="nav__links" href="../index.html">Colecciones</a>
+            <ul class="submenu">
+              <li><a href="sombreros.html">Sombreros Clásicos</a></li>
+              <li><a href="sombreros.html">Sombreros de Alta Costura</a></li>
+              <li><a href="sombreros.html">Sombreros Unisex</a></li>
+            </ul>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="productos.html">Hombres</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="productos.html">Mujeres</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="productos.html">Unisex</a>
+          </li>
+          <li class="nav__items">
+            <a class="nav__links" href="productos.html">Accesorios</a>
+          </li>
+        </ul>
+  
+        <ul class="nav__list">
+          <li class="nav__items search-wrapper">
+            <input type="text" class="search-bar" placeholder="Buscar...">
+            <a class="nav__links search-toggle" href="#"><i data-lucide="search"></i></a>
+          </li>
+        
+          <li class="nav__items"><a class="nav__links" href="profile.html">ES | MXN($)</a></li>
+          <li class="nav__items"><a class="nav__links" href="login.html"><i data-lucide="user"></i></a></li>
+          <li class="nav__items"><a class="nav__links" href="carrito.html"><i data-lucide="shopping-cart"></i></a></li>
+        </ul>
+        
+        
+  
+      </nav>
+    </header>
     <div class="contenedor-main">
       <div class="products-list">
         <div class="encabezados">
@@ -127,5 +134,7 @@
 
     <script src="/js/inc-dec-number.js"></script>
     <script src="/js/navegacionMenu.js"></script>
+    <script src="../js/barraBusqueda.js"></script>
+
   </body>
 </html>
