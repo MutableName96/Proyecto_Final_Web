@@ -425,6 +425,27 @@
   <script src="js/index.js"></script>
   <script src="js/navegacionMenu.js"></script>
   <script src="js/barraBusqueda.js"></script>
+
+  <div class="chat-widget">
+    <button id="chat-toggle" class="chat-toggle">
+      <i data-lucide="message-circle"></i>
+    </button>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h3>Asistente de Sombreros</h3>
+        <button class="close-chat">×</button>
+      </div>
+      <div id="chat-messages" class="chat-messages"></div>
+      <div class="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Escribe tu respuesta...">
+        <button id="send-button">
+          <i data-lucide="send"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/chatbot.js"></script>
 </body>
 
 </html>
