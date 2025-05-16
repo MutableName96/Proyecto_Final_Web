@@ -796,51 +796,111 @@ body {
 }
 
 
-.text-Hatgap{
-  margin-left: 50px;
-  font-size: 50px;
-  padding: 10px;
+.text-Hatgap {
+  margin-left: 0;
+  margin-top: 40px;
+  font-size: 3.5rem;
+  padding: 40px 0 20px 0;
   font-weight: bold;
-
-}
-
-.typeProducts{
-  width: 100%;
-  height: 25vh;
-  margin-top: 20px;
-  border-bottom: 5  px solid var(--black-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.cardProducts{
-  
-  width: auto;
-  max-width: 150px;
-  padding: 10px;
-  height: auto;
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-decoration: none;
-  color:var(--black-color);
   text-align: center;
-  
+  letter-spacing: 1px;
+  background: #fff;
+  color: #4C0D14;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-.cardProducts img{
+.typeProducts {
+  width: 100%;
+  min-height: 35vh;
+  margin-top: 0;
+  padding: 40px 0 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: #fff;
+}
+
+.cardProducts {
+  background: #faf7f2;
+  max-width: 220px;
+  min-width: 180px;
+  padding: 25px 20px 20px 20px;
+  margin: 20px 15px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(76,13,20,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--black-color);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cardProducts:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(76,13,20,0.15), 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.cardProducts img {
   width: 150px;
-  margin-bottom: 10px;
   height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
-.cardProducts h2,img{
 
+.cardProducts h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+  color: #4C0D14;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardProducts p {
+  font-size: 1.1rem;
+  color: #333;
   margin: 0;
-  padding: 0;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 900px) {
+  .typeProducts {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0 40px 0;
+  }
+  .cardProducts {
+    margin: 15px 5px;
+    max-width: 160px;
+    min-width: 120px;
+    padding: 18px 10px 15px 10px;
+  }
+  .cardProducts img {
+    width: 110px;
+    height: 110px;
+  }
+  .cardProducts h2 {
+    font-size: 1rem;
+    min-height: 36px;
+  }
+  .cardProducts p {
+    font-size: 0.95rem;
+  }
+  .text-Hatgap {
+    font-size: 2.1rem;
+    padding: 25px 0 10px 0;
+  }
 }
 
 /* Estilos del Chatbot */
