@@ -16,8 +16,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Llamar a la función de registro
     if (registerUser($fullName, $email, $password, $phone, $address)) {
-        // Registro exitoso: redirigir a login.php
-        header("Location: login.php");
+        // Obtener el ID del usuario recién registrado
+        $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
+
+        // Iniciar sesión automáticamente
+        $_SESSION['usuario_id'] = $user['id'];
+        $_SESSION['usuario_email'] = $email;
+        $_SESSION['usuario_nombre'] = $fullName;
+
+        // Redirigir a la página principal
+        header("Location: ../index.php");
         exit;
     } else {
         // Error en el registro

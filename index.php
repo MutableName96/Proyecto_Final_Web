@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,14 +25,14 @@
   <header class="header">
     <nav class="nav">
       <div class="nav__logo">
-        <a href="/index.html" class="nav__logo"><img src="/assets/images/Logos-HatGap/logo-0D0D0D.png"
+        <a href="index.php" class="nav__logo"><img src="assets/images/Logos-HatGap/logo-0D0D0D.png"
             style="width: 30px; height: auto;" alt=""></a>
         <p>HATGAP</p>
       </div>
 
       <ul class="nav__list">
         <li class="nav__items nav__has-submenu">
-          <a class="nav__links" href="index.html">Colecciones</a>
+          <a class="nav__links" href="index.php">Colecciones</a>
           <ul class="submenu">
             <li><a href="sombreros.html">Sombreros Clásicos</a></li>
             <li><a href="sombreros.html">Sombreros de Alta Costura</a></li>
@@ -57,8 +60,13 @@
         </li>
       
         <li class="nav__items"><a class="nav__links" href="profile.html">ES | MXN($)</a></li>
-        <li class="nav__items"><a class="nav__links" href="pages/login.html"><i data-lucide="user"></i></a></li>
-        <li class="nav__items"><a class="nav__links" href="/pages/carrito.html"><i data-lucide="shopping-cart"></i></a></li>
+        <?php if (isset($_SESSION['usuario_nombre'])): ?>
+          <li class="nav__items"><a class="nav__links" href="pages/profile.html"><?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?></a></li>
+          <li class="nav__items"><a class="nav__links" href="pages/logout.php"><i data-lucide="log-out"></i></a></li>
+        <?php else: ?>
+          <li class="nav__items"><a class="nav__links" href="pages/login.html"><i data-lucide="user"></i></a></li>
+        <?php endif; ?>
+        <li class="nav__items"><a class="nav__links" href="pages/carrito.html"><i data-lucide="shopping-cart"></i></a></li>
       </ul>
       
       
@@ -107,37 +115,37 @@
     
     
     <a href="" class="cardProducts">
-      <img src="/assets/images/modelo 1.webp" alt="">
+      <img src="assets/images/modelo 1.webp" alt="">
       <h2>Sombrero Fedora Elegance</h2>
       <p>Desde $1799</p>
     </a>
     
     <a href="" class="cardProducts">
-      <img src="/assets/images/modelo 2.webp" alt="">
+      <img src="assets/images/sombrero 2.png" alt="">
       <h2>Sombrero Trilby de Lujo</h2>
       <p>Desde $1699</p>
     </a>
     
     <a href="" class="cardProducts">
-      <img src="/assets/images/modelo 3.webp" alt="">
+      <img src="assets/images/sombrero 1.png" alt="">
       <h2>Sombrero Panamá Clásico</h2>
       <p>Desde $2499</p>
     </a>
     
     <a href="" class="cardProducts">
-      <img src="/assets/images/modelo 4.webp" alt="">
+      <img src="assets/images/modelo 4.webp" alt="">
       <h2>Sombrero Homburg Royal</h2>
       <p>Desde $2199</p>
     </a>
     
     <a href="" class="cardProducts">
-      <img src="/assets/images/modelo 5.webp" alt="">
+      <img src="assets/images/modelo 5.webp" alt="">
       <h2>Sombrero Boater Supremo</h2>
       <p>Desde $1899</p>
     </a>
     
     <a href="" class="cardProducts">
-      <img src="/assets/images/modelo 6.webp" alt="">
+      <img src="assets/images/modelo 6.webp" alt="">
       <h2>Sombrero Western Heritage</h2>
       <p>Desde $1999</p>
     </a>

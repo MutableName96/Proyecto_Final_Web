@@ -1,6 +1,12 @@
 <?php
 session_start(); // Iniciar sesión
 
+// Si se accede por GET, redirigir al formulario de login
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: login.html");
+    exit();
+}
+
 // Incluir la conexión a la base de datos
 include '../includes/db.php'; 
 
@@ -17,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Preparar la consulta para verificar si el usuario existe
-    $stmt = $pdo->prepare("SELECT id, email, password FROM usuarios WHERE email = ?");
+    $stmt = $pdo->prepare("SELECT id, email, password, username FROM usuarios WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch(); // Obtenemos el resultado
 
@@ -28,20 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Si la contraseña es correcta, iniciar sesión
             $_SESSION['usuario_id'] = $user['id'];
             $_SESSION['usuario_email'] = $user['email'];
+            $_SESSION['usuario_nombre'] = $user['username'];
 
-            // Guardamos la URL de la página anterior (para redirigir después)
-            if (isset($_SERVER['HTTP_REFERER'])) {
-                $_SESSION['previous_url'] = $_SERVER['HTTP_REFERER'];
-            } else {
-                $_SESSION['previous_url'] = 'index.php'; // Redirige a la página principal si no hay referer
-            }
-
-            // Redirigir al dashboard u otra página de inicio
-            header("Location: dashboard.php");
+            // Redirigir a la página principal
+            header("Location: ../index.php");
             exit();
         } else {
             // Contraseña incorrecta
-            echo "La contraseña es incorrect.";
+            echo "La contraseña es incorrecta.";
         }
     } else {
         // Usuario no encontrado
